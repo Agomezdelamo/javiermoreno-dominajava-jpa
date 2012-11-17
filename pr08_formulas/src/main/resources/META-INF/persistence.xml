@@ -1,0 +1,42 @@
+
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+    http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+   version="1.0">
+
+    <persistence-unit name="data">
+        <properties>
+            <property name="hibernate.archive.autodetection" value="class, hbm"/>
+
+            <property name="hibernate.connection.driver_class" value="org.apache.derby.jdbc.EmbeddedDriver" />
+            <property name="hibernate.connection.url" value="jdbc:derby:/temp/data;create=true"/>
+            <property name="hibernate.connection.username" value="app"/>
+            <property name="hibernate.connection.password" value="app" />
+	      
+        
+        <!-- JDBC connection pool (use the built-in) -->
+            <property name="hibernate.connection.pool_size" value="1"/>
+
+        <!-- SQL dialect -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.DerbyDialect"/>
+
+        <!-- Enable Hibernate's automatic session context management -->
+            <property name="hibernate.current_session_context_class" value="thread"/>
+
+        <!-- Disable the second-level cache  -->
+            <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+
+        <!-- Echo all executed SQL to stdout -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="false"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
+
+
+        <!-- XPL En este caso ya hemos creado la base de datos con el script -->
+            <property name="hibernate.hbm2ddl.auto" value="none"/>
+
+        </properties>
+    </persistence-unit>
+
+</persistence>

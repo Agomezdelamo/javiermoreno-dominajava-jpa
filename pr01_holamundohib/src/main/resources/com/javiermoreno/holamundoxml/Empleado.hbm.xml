@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.javiermoreno.holamundoxml">
+  <class name="Empleado" table="EMPLEADOS">
+    <id column="ID_EMP" name="id">
+      <generator class="increment"/>
+    </id>
+    <property column="NOMBRE_EMP" name="nombre"/>
+    <many-to-one cascade="all" column="ID_JEFE" foreign-key="FK_EMP_JEFE" name="jefe"/>
+  </class>
+</hibernate-mapping>
