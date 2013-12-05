@@ -129,7 +129,7 @@ public class Main {
                 // 22 navegaci�n por grafo autom�tica
                 "select emp from Empleado emp where emp.puestoDeTrabajo.departamento.nombre='Marketing'",
                 // 23 HQL la misma, usando la palabra reservada id (evita una join al indicar que est� en el fk)
-                "select emp from Empleado emp where emp.puestoDeTrabajo.departamento.id='Marketing'",
+                "select emp from Empleado as emp where emp.puestoDeTrabajo.departamento.id='Marketing'",
                 // 24 Componentes
                    "select per from Persona as per where per.direccion is null ",
                 // 25 enumeraciones				
